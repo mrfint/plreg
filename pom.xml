@@ -59,6 +59,14 @@
             <version>1.2</version>
         </dependency>
 
+        <!-- Jackson -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.9</version>
+        </dependency>
+
+
         <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>
