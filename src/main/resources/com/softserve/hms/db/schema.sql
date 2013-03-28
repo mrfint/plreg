@@ -1,6 +1,6 @@
+DROP TABLE appointment IF EXISTS;
 DROP TABLE user IF EXISTS;
 DROP TABLE patient IF EXISTS;
-DROP TABLE appointment IF EXISTS;
 
 CREATE TABLE patient (
   id         INTEGER IDENTITY PRIMARY KEY,
@@ -15,7 +15,7 @@ CREATE TABLE user (
   last_name  VARCHAR(30),
   mid_name VARCHAR(30),
   login VARCHAR(30),
-  password VARCHAR(30),
+  password VARCHAR(30)
 );
 
 CREATE TABLE appointment (
