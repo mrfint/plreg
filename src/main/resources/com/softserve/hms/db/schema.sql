@@ -1,6 +1,6 @@
 DROP TABLE user IF EXISTS;
 DROP TABLE patient IF EXISTS;
-DROP TABLE doctor IF EXISTS;
+DROP TABLE user IF EXISTS;
 DROP TABLE appointment IF EXISTS;
 
 CREATE TABLE user (
@@ -17,7 +17,7 @@ CREATE TABLE patient (
   mid_name VARCHAR(30)
 );
 
-CREATE TABLE doctor (
+CREATE TABLE user (
   id         INTEGER IDENTITY PRIMARY KEY,
   first_name VARCHAR(30),
   last_name  VARCHAR(30),
@@ -33,4 +33,4 @@ CREATE TABLE appointment (
 );
 
 ALTER TABLE appointment ADD CONSTRAINT fk_app_patient FOREIGN KEY (patient_id) REFERENCES patient (id);
-ALTER TABLE appointment ADD CONSTRAINT fk_app_doctor FOREIGN KEY (doctor_id) REFERENCES doctor (id);
+ALTER TABLE appointment ADD CONSTRAINT fk_app_doctor FOREIGN KEY (doctor_id) REFERENCES user (id);
