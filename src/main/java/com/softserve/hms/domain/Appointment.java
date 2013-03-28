@@ -3,7 +3,7 @@ package com.softserve.hms.domain;
 public class Appointment {
     private Integer id;
     private Patient patient;
-    private Doctor doctor;
+    private User user;
     private String hospital;
 
     public Integer getId() {
@@ -22,12 +22,12 @@ public class Appointment {
         this.patient = patient;
     }
 
-    public Doctor getDoctor() {
-        return doctor;
+    public User getUser() {
+        return user;
     }
 
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getHospital() {
@@ -45,7 +45,7 @@ public class Appointment {
 
         Appointment that = (Appointment) o;
 
-        if (!doctor.equals(that.doctor)) return false;
+        if (!user.equals(that.user)) return false;
         if (!hospital.equals(that.hospital)) return false;
         if (!id.equals(that.id)) return false;
         if (!patient.equals(that.patient)) return false;
@@ -57,7 +57,7 @@ public class Appointment {
     public int hashCode() {
         int result = id.hashCode();
         result = 31 * result + patient.hashCode();
-        result = 31 * result + doctor.hashCode();
+        result = 31 * result + user.hashCode();
         result = 31 * result + hospital.hashCode();
         return result;
     }
