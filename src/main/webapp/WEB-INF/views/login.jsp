@@ -20,7 +20,9 @@
             <input type="text" name="j_username" class="input-block-level" placeholder="username" required />
             <input type="password" name="j_password" class="input-block-level" placeholder="password" required />
             <button class="btn" value="Login">Login</button>
-            <div class="hide error">Invalid user name or password</div>
+            <c:if test="${param.error=='true'}">
+            <div class="error">Invalid user name or password</div>
+            </c:if>
         </form>
     </div>
     <div class="footer">
