@@ -11,6 +11,13 @@
   <version>0.1</version>
   <name>PLRS</name>
 
+    <properties>
+        <!-- Database access -->
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <ehcache.version>2.6.5</ehcache.version>
+        <hsqldb.version>2.2.9</hsqldb.version>
+    </properties>
+
     <dependencies>
 
         <!-- Spring Core -->
@@ -73,6 +80,13 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
+            <scope>runtime</scope>
         </dependency>
   </dependencies>
 
