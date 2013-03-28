@@ -8,6 +8,6 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-   Login page!!!
+   Home page!!!
 </body>
 </html>

@@ -10,7 +10,7 @@
 
     <http auto-config="true">
         <anonymous username="guest" granted-authority="ROLE_GUEST"/>
-        <intercept-url pattern="/**" access="ROLE_GUEST, ROLE_USER"/>
+        <intercept-url pattern="/com/softserve/hms/service" access="ROLE_GUEST, ROLE_USER"/>
         <intercept-url pattern="/login" access="ROLE_GUEST,ROLE_USER"/>
         <intercept-url pattern="/home" access="ROLE_USER"/>
         <form-login login-page="/login" authentication-failure-url="/login?error=true" default-target-url="/home"/>
