@@ -3,13 +3,6 @@ DROP TABLE patient IF EXISTS;
 DROP TABLE user IF EXISTS;
 DROP TABLE appointment IF EXISTS;
 
-CREATE TABLE user (
-  id         INTEGER IDENTITY PRIMARY KEY,
-  first_name VARCHAR(30),
-  last_name  VARCHAR(30),
-  password VARCHAR(30)
-);
-
 CREATE TABLE patient (
   id         INTEGER IDENTITY PRIMARY KEY,
   first_name VARCHAR(30),
