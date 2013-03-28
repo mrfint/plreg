@@ -8,6 +8,7 @@
 <html>
 <head>
     <title>Sign In</title>
+    <link type="text/css" href="<spring:url value="/resources/css/pages/home.css"/>" rel="stylesheet" />
 </head>
 <body>
 <h1>Spring Security - Sign In</h1>
