@@ -1,0 +1,9 @@
+.no-overflow {
+    overflow: hidden;
+}
+
+.rounded {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
