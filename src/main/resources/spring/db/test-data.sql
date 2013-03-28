@@ -1,4 +1,4 @@
-INSERT INTO user VALUES (1, 'admin', 'admin','');
+INSERT INTO user VALUES (1, 'admin', 'admin','admin');
 
 INSERT INTO patient VALUES (1, 'James', 'Carter','E');
 INSERT INTO patient VALUES (2, 'Helen', 'Leary','A');
