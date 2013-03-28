@@ -10,14 +10,21 @@
     <title>Sign In</title>
 </head>
 <body>
-<h1>Spring Security - Sign In</h1>
-
-<form class="login-form" action="j_spring_security_check" method="post">
-    <input id="j_username" name="j_username" size="20" maxlength="50" type="text" />
-
-    <input id="j_password" name="j_password" size="20" maxlength="50" type="password" />
-
-    <input type="submit" value="Login" />
-</form>
+<div class="container no-overflow" id="loginForm">
+    <div class="form rounded">
+        <div class="banner" style="text-align:center;"></div>
+        <form action="j_spring_security_check" method="post">
+            <input type="text" name="j_username" class="input-block-level" placeholder="username" required />
+            <input type="password" name="j_password" class="input-block-level" placeholder="password" required />
+            <button class="btn" value="Login">Login</button>
+            <div class="hide error">Invalid user name or password</div>
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2001-2012 HealthTech Holding Inc.<br />
+        Build 113, built at 03:07 on 03/26/2013<br />
+        1<br />2
+    </div>
+</div>
 </body>
 </html>
