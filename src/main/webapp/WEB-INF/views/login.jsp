@@ -8,6 +8,9 @@
 <html>
 <head>
     <title>Sign In</title>
+    <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap.css"/>" rel="stylesheet" />
+    <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap-responsive.css"/>" rel="stylesheet" />
+    <link type="text/css" href="<spring:url value="/resources/css/pages/login.css"/>" rel="stylesheet" />
 </head>
 <body>
 <div class="container no-overflow" id="loginForm">
@@ -17,13 +20,14 @@
             <input type="text" name="j_username" class="input-block-level" placeholder="username" required />
             <input type="password" name="j_password" class="input-block-level" placeholder="password" required />
             <button class="btn" value="Login">Login</button>
-            <div class="hide error">Invalid user name or password</div>
+            <c:if test="${param.error=='true'}">
+            <div class="error">Invalid user name or password</div>
+            </c:if>
         </form>
     </div>
     <div class="footer">
         &copy; 2001-2012 HealthTech Holding Inc.<br />
-        Build 113, built at 03:07 on 03/26/2013<br />
-        1<br />2
+        Build 113, built at 03:07 on 03/26/2013
     </div>
 </div>
 </body>
