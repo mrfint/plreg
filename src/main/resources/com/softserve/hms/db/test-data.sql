@@ -7,8 +7,8 @@ INSERT INTO patient VALUES (4, 'Rafael', 'Ortega','G');
 INSERT INTO patient VALUES (5, 'Henry', 'Stevens','Bd');
 INSERT INTO patient VALUES (6, 'Sharon', 'Jenkins','A');
 
-INSERT INTO doctor VALUES (1, 'Joan', 'Smit','E', 'ophthalmologist');
-INSERT INTO doctor VALUES (2, 'Armin', 'Buren','van','sawbones');
+INSERT INTO user VALUES (1, 'Joan', 'Smit','E', 'ophthalmologist');
+INSERT INTO user VALUES (2, 'Armin', 'Buren','van','sawbones');
 
 INSERT INTO appointment VALUES (1,1,1,'Hms Test Hospital' );
 INSERT INTO appointment VALUES (2,2,1,'Hms Test Hospital' );
