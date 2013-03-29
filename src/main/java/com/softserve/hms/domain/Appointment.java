@@ -1,10 +1,7 @@
 package com.softserve.hms.domain;
 
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
 
-@Entity
 public class Appointment {
     private Integer id;
     private Patient patient;
@@ -18,12 +15,22 @@ public class Appointment {
     private String pcn;
     private String resource;
 
+    private int patientId;
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
     }
 
     public Patient getPatient() {
@@ -148,7 +155,7 @@ public class Appointment {
     public String toString() {
         return "Appointment{" +
                 "id=" + id +
-                ", patient=" + patient +
+                ", patient=" + '\'' +patient.getFirstName() + ' ' + patient.getLastName() + '\'' +
                 ", hospital='" + hospital + '\'' +
                 ", appointDate=" + appointDate +
                 ", appointType='" + appointType + '\'' +

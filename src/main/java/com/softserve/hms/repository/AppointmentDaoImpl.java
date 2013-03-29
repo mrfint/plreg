@@ -15,7 +15,9 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository("appointmentDao")
 public class AppointmentDaoImpl implements AppointmentDao {
@@ -37,32 +39,25 @@ public class AppointmentDaoImpl implements AppointmentDao {
     @Override
     public List<Appointment> findAll() {
         List<Appointment> appointments = new ArrayList<Appointment>();
-        // Retrieve the list of all vets.
+        // Retrieve the list of all appointments.
         appointments.addAll(this.jdbcTemplate.query(
                 "SELECT * FROM appointment",
                 ParameterizedBeanPropertyRowMapper.newInstance(Appointment.class)));
 
-        // Retrieve the list of all possible specialties.
-//        final List<Patient> specialties = this.jdbcTemplate.query(
-//                "SELECT id, name FROM specialties",
-//                ParameterizedBeanPropertyRowMapper.newInstance(Patient.class));
+        // Retrieve the list of all possible patients.
+        List<Patient> patients = this.jdbcTemplate.query(
+                "SELECT * FROM patient",
+                ParameterizedBeanPropertyRowMapper.newInstance(Patient.class));
 
-        // Build each vet's list of specialties.
-//        for (Vet vet : vets) {
-//            final List<Integer> vetSpecialtiesIds = this.jdbcTemplate.query(
-//                    "SELECT specialty_id FROM vet_specialties WHERE vet_id=?",
-//                    new ParameterizedRowMapper<Integer>() {
-//                        @Override
-//                        public Integer mapRow(ResultSet rs, int row) throws SQLException {
-//                            return Integer.valueOf(rs.getInt(1));
-//                        }
-//                    },
-//                    vet.getId().intValue());
-//            for (int specialtyId : vetSpecialtiesIds) {
-//                Specialty specialty = EntityUtils.getById(specialties, Specialty.class, specialtyId);
-//                vet.addSpecialty(specialty);
-//            }
-//        }
+        Map<Integer, Patient> map = new HashMap<Integer,Patient>();
+        for(Patient patient: patients){
+            map.put(patient.getId(), patient);
+        }
+
+        for(Appointment appointment: appointments){
+            appointment.setPatient(map.get(appointment.getPatientId()));
+        }
+
         return appointments;
     }
 }
