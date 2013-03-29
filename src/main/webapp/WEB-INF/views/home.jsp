@@ -15,6 +15,7 @@
     <script type="text/javascript" src="<spring:url value="/resources/js/lib/jsrender.js"/>"></script>
 
     <script type="text/javascript" src="<spring:url value="/resources/js/pages/home.js"/>"></script>
+    <script type="text/javascript" src="<spring:url value="/resources/js/collection/appointments.js"/>"></script>
 
 </head>
 <body>
@@ -28,11 +29,11 @@
             <div class="span2 block">
                 <div class="row">
                     <span class="param-name">Appointment Date</span>
-                    <span class="param-value">{{>adate}}</span>
+                    <span class="param-value">{{>appointDate}}</span>
                 </div>
                 <div class="row">
                     <span class="param-name">Appointment Type</span>
-                    <span class="param-value">{{>atype}}</span>
+                    <span class="param-value">{{>appointType}}</span>
                 </div>
             </div>
             <div class="span2 block">
@@ -71,6 +72,11 @@
 
 <div class="container-fluid" id="appointments">
     <div class="header">
+        <div class="right-navigation">
+            <span class="user-name">${currentUser}</span>
+            <i class="home"></i>
+            <span class="logout">loguot</span>
+        </div>
     </div>
     <div class="filters">
         <select name="location" id="location">

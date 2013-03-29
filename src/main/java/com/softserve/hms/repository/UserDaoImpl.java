@@ -5,7 +5,6 @@ import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.object.MappingSqlQuery;
 import org.springframework.stereotype.Repository;
-
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -19,6 +18,9 @@ import java.util.Map;
 public class UserDaoImpl implements UserDao {
 
     private final static String CREATE_USER_SQL = "INSERT INTO USER (login, password) VALUES (?,?)";
+    private final static String SQL_SELECT_BY_FNAME = "select * from user where first_name = :first_name";
+    private final static String SQL_SELECT_ALL_USERS = "select * from user";
+
     private DataSource dataSource;
     private SelectAllUsers selectAllUsers;
     private SelectUsersByFName selectUsersByFName;
@@ -30,10 +32,6 @@ public class UserDaoImpl implements UserDao {
         this.selectAllUsers = new SelectAllUsers(dataSource);
         this.selectUsersByFName = new SelectUsersByFName(dataSource);
         this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
-    }
-
-    public DataSource getDataSource() {
-        return dataSource;
     }
 
     @Override
@@ -54,8 +52,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     class SelectAllUsers extends MappingSqlQuery<User> {
-        private static final String SQL_SELECT_ALL_USERS = "select * from user";
-
         public SelectAllUsers(DataSource dataSource) {
             super(dataSource, SQL_SELECT_ALL_USERS);
         }
@@ -72,8 +68,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     class SelectUsersByFName extends MappingSqlQuery<User> {
-        private static final String SQL_SELECT_BY_FNAME = "select * from user where first_name = :first_name";
-
         public SelectUsersByFName(DataSource dataSource) {
             super(dataSource, SQL_SELECT_BY_FNAME);
             super.declareParameter(new SqlParameter("first_name", Types.VARCHAR));

@@ -41,13 +41,14 @@ body {
 }
 
 #appointments .list .item .info .photo{
-    background-color: #AAA;
+    background: #AAA url("/resources/img/user.jpg") center center no-repeat;
     height: 55px;
     width: 55px;
     margin-right: 35px;
+    border-radius: 5px;
 }
 
-#appointments .list .item. .info .row {
+#appointments .list .item .info .row {
     line-height: 18px;
 }
 
@@ -82,4 +83,19 @@ body {
 
 .no-overflow {
     overflow: hidden !important;
+}
+
+.right-navigation {
+    float: right;
+    margin: 10px 20px;
+}
+.logout {
+    margin-left: 20px;
+}
+.home {
+    background: url("/resources/img/ico.jpg")center center no-repeat;
+    height: 16px;
+    width: 16px;
+    position: fixed;
+    margin-top: 1px;
 }

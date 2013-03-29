@@ -21,17 +21,6 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
 
-    public User createUser(String login, String plainPassword) {
-        User user = new User();
-        user.setLogin(login);
-        user.setPassword(plainPassword);
-        return user;
-    }
-
-    public String getUser(String login) {
-        return null;
-    }
-
     @Override
     public void createUser(User user) {
         userDao.createUser(user);
