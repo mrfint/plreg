@@ -18,7 +18,7 @@ public class SelectAllUsers extends MappingSqlQuery<User> {
     protected User mapRow(ResultSet resultSet, int i) throws SQLException {
         User user = new User();
         user.setId(resultSet.getInt("id"));
-//        user.setLogin(resultSet.getString("login"));
+        user.setLogin(resultSet.getString("login"));
         user.setFirstName(resultSet.getString("first_name"));
         user.setLastName(resultSet.getString("last_name"));
         return user;

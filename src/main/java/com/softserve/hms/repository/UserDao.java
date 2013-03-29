@@ -6,7 +6,7 @@ import com.softserve.hms.domain.User;
 import java.util.List;
 
 public interface UserDao {
-    public String findFirsNameById(Integer id);
     public List<User> findAll();
-    public List<User> findPersonByFName(String name);
+    public List<User> findUserByFName(String fName);
+    public void createUser(User user);
 }
