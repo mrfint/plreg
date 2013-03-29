@@ -22,6 +22,15 @@ import java.util.Map;
 @Repository("appointmentDao")
 public class AppointmentDaoImpl implements AppointmentDao {
 
+    private static final String PAGING_QUERY_NO_FILTER
+            = "SELECT LIMIT ?, ? * FROM appointment";
+    private static final String PAGING_QUERY_HOSPITAL_FILTER
+            = "SELECT LIMIT ?, ? * FROM appointment WHERE hospital = ?";
+    private static final String PAGING_QUERY_DEPARTMENT_FILTER
+            = "SELECT LIMIT ?, ? * FROM appointment WHERE department = ?";
+    private static final String PAGING_QUERY_HOSPITAL_DEPARTMENT_FILTER
+            = "SELECT LIMIT ?, ? * FROM appointment WHERE hospital = ? AND department = ?";
+
     private JdbcTemplate jdbcTemplate;
     private DataSource dataSource;
 
@@ -59,5 +68,31 @@ public class AppointmentDaoImpl implements AppointmentDao {
         }
 
         return appointments;
+    }
+
+    @Override
+    public List<Appointment> getAppointments(String hospital, String department, long from, long pageSize) {
+        List args = new ArrayList();
+        args.add(from);
+        args.add(pageSize);
+        //define query for filtering
+        String sqlQuery = PAGING_QUERY_NO_FILTER;
+        if (hospital != null) {
+            args.add(hospital);
+            if (department != null) {
+                args.add(department);
+                sqlQuery = PAGING_QUERY_HOSPITAL_DEPARTMENT_FILTER;
+            }
+            else sqlQuery = PAGING_QUERY_HOSPITAL_FILTER;
+        }
+        else {
+            if (department != null) {
+                args.add(department);
+                sqlQuery = PAGING_QUERY_DEPARTMENT_FILTER;
+            }
+        }
+        //get appointments.
+        return jdbcTemplate.query(sqlQuery, args.toArray(),
+                ParameterizedBeanPropertyRowMapper.newInstance(Appointment.class));
     }
 }
