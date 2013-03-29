@@ -8,11 +8,11 @@ INSERT INTO patient VALUES (4, 'Rafael', 'Ortega','G');
 INSERT INTO patient VALUES (5, 'Henry', 'Stevens','Bd');
 INSERT INTO patient VALUES (6, 'Sharon', 'Jenkins','A');
 
-INSERT INTO appointment(id,patient_id,hospital) VALUES (1,1,'Hms Test Hospital' );
-INSERT INTO appointment(id,patient_id,hospital) VALUES (2,2,'Hms Test Hospital' );
-INSERT INTO appointment(id,patient_id,hospital) VALUES (3,3,'Hms Test1 Hospital');
-INSERT INTO appointment(id,patient_id,hospital) VALUES (4,4,'Hms Test1 Hospital');
-INSERT INTO appointment(id,patient_id,hospital) VALUES (5,5,'Hms Test2 Hospital');
-INSERT INTO appointment(id,patient_id,hospital) VALUES (6,6,'Hms Test2 Hospital');
+INSERT INTO appointment(id,patient_id,hospital,appoint_date,resource) VALUES (1,1,'Hms Test1 Hospital','2012-09-04','test resource1');
+INSERT INTO appointment(id,patient_id,hospital,appoint_date,resource) VALUES (2,2,'Hms Test2 Hospital','2012-09-04','test resource2');
+INSERT INTO appointment(id,patient_id,hospital,appoint_date,resource) VALUES (3,3,'Hms Test3 Hospital','2012-09-04','test resource3');
+INSERT INTO appointment(id,patient_id,hospital,appoint_date,resource) VALUES (4,4,'Hms Test4 Hospital','2012-09-04','test resource4');
+INSERT INTO appointment(id,patient_id,hospital,appoint_date,resource) VALUES (5,5,'Hms Test5 Hospital','2012-09-04','test resource5');
+INSERT INTO appointment(id,patient_id,hospital,appoint_date,resource) VALUES (6,6,'Hms Test6 Hospital','2012-09-04','test resource6');
 
 
