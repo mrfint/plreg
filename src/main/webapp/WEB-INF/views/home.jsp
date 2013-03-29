@@ -8,9 +8,12 @@
     <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap.css"/>" rel="stylesheet" />
     <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap-responsive.css"/>" rel="stylesheet" />
     <link type="text/css" href="<spring:url value="/resources/css/pages/home.css"/>" rel="stylesheet" />
+
     <script type="text/javascript" src="<spring:url value="/resources/js/lib/jquery-1.9.1.js"/>"></script>
     <script type="text/javascript" src="<spring:url value="/resources/js/lib/underscore.js"/>"></script>
     <script type="text/javascript" src="<spring:url value="/resources/js/lib/backbone.js"/>"></script>
+    <script type="text/javascript" src="<spring:url value="/resources/js/lib/jsrender.js"/>"></script>
+
     <script type="text/javascript" src="<spring:url value="/resources/js/pages/home.js"/>"></script>
 
 </head>

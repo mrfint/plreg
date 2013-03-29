@@ -31,7 +31,7 @@
             });
         }
         $( "#appointments .inner-list" ).html(
-            $( "#rowTemplate" ).render( data )
+            $("#rowTemplate").render( data )
         );
     });
 })();
