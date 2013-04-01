@@ -8,6 +8,7 @@
 <html>
 <head>
     <title>Sign In</title>
+    <link rel="icon" href="<spring:url value="/resources/img/favicon.ico" />" type="image/vnd.microsoft.icon" />
     <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap.css"/>" rel="stylesheet" />
     <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap-responsive.css"/>" rel="stylesheet" />
     <link type="text/css" href="<spring:url value="/resources/css/pages/login.css"/>" rel="stylesheet" />

@@ -5,6 +5,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8"/>
+    <link rel="icon" href="<spring:url value="/resources/img/favicon.ico" />" type="image/vnd.microsoft.icon" />
+
     <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap.css"/>" rel="stylesheet" />
     <link type="text/css" href="<spring:url value="/resources/css/lib/bootstrap-responsive.css"/>" rel="stylesheet" />
     <link type="text/css" href="<spring:url value="/resources/css/pages/home.css"/>" rel="stylesheet" />
@@ -74,8 +76,8 @@
     <div class="header">
         <div class="right-navigation">
             <span class="user-name">${currentUser}</span>
-            <i class="home"></i>
-            <span class="logout">loguot</span>
+            <i class="icon-home"></i>
+            <a href="/loggedout">logout</a>
         </div>
     </div>
     <div class="filters">

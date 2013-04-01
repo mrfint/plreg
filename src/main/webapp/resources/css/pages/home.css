@@ -89,13 +89,8 @@ body {
     float: right;
     margin: 10px 20px;
 }
-.logout {
-    margin-left: 20px;
-}
-.home {
-    background: url("/resources/img/ico.jpg")center center no-repeat;
-    height: 16px;
-    width: 16px;
-    position: fixed;
-    margin-top: 1px;
+
+[class^="icon-"],
+[class*=" icon-"] {
+    background-image: url("../../img/glyphicons-halflings.png");
 }

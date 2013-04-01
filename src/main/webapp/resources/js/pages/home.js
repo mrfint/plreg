@@ -24,10 +24,7 @@
                 render(appointments.toJSON());
             }
         });
-        $(".logout").on("click", function () {
-            window.location.replace("/loggedout");
-        });
-        $(".home").on("click", function () {
+        $(".icon-home").on("click", function () {
             window.location.replace("/home");
         });
     });
